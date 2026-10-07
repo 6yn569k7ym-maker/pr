@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Город после дождя</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>  
+  <style>
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,900');  
+html, body {
+  font-family: 'Montserrat', sans-serif;
+  height: 100%;
+  margin: 0;
+  }
+  .box {
+
+  width: 100%;
+  position: absolute;
+  margin-top: -400px;
+  overflow: auto;
+
+}
+* {
+
+  box-sizing: border-box;
+
+  padding: 0;
+
+  margin: 0;
+
+  font-family: 'Montserrat', sans-serif;
+
+  font-weight: 400;
+
+  font-size: 16px;
+
+  line-height: 1.5;
+
+}
+
+
+
+img {
+
+width: 100%;
+
+height: auto;
+
+display: block;
+
+  }
+  #text {
+
+  z-index: 0;
+
+  padding: 18px 38px;
+
+}
+
+
+
+.nav {
+
+  z-index: 9;
+
+  position: fixed;
+
+  bottom: 10.5%;
+
+  right: 5.5%;
+
+  width: 48px;
+
+  height: 48px;
+
+  border-radius: 50%;
+
+  background-color: #f9f9f9;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  visibilty: hidden;
+
+  opacity: 0;
+
+  box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.48);
+
+  cursor: pointer;
+
+  transition: all 0.3s ease-in;
+
+}
+.nav.show {
+
+  visibility: visible;
+
+  opacity: 1;
+
+}
+#header-overlay {
+
+  height: 100vh;
+
+  width: 100%;
+
+  background: transparent;
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  z-index: 1000;
+
+}
+#intro {
+
+  position: absolute; 
+
+  top: 10%;
+
+  left: 47%;
+
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+
+  text-align: center;
+
+  color: rgba(96, 125, 139,1.0);
+
+}
+
+
+
+#intro h3 {
+
+  font-family: 'Montserrat', serif;
+
+  font-size: 50px;
+
+  text-transform: capitalize;
+
+  font-weight: 400;
+
+  padding-bottom: 7px;
+
+  transition: .7s ease-in-out;
+
+  color: rgba(70,130,180);
+
+}
+
+
+
+#intro a {
+
+  font-family: 'Montserrat', sans-serif;
+
+  font-size: 14px;
+
+  border: 1px solid rgba(96, 125, 139,1.0);
+
+  padding: 10px 30px;
+
+  position: absolute;
+
+  transition: .3s ease-in-out;
+
+  cursor: pointer;
+
+  left: 0;
+
+  top: 0;
+
+}
+#button-container {
+
+  height: 40px;
+
+  width: 150px;
+
+  position: relative;
+
+  margin: 30px auto 0;
+
+  transform: none;
+
+  left: auto;
+
+  top: 20px;
+
+  transition: .3s ease-in-out;
+
+}
+#button-overlay {
+
+  height: 43px;
+
+  width: 0;
+
+  top: 0px;
+
+  left: 0;
+
+  position: absolute;
+
+  background: yellow;
+
+  transition: .3s ease-in-out;
+
+}
+.loader {
+
+  width: 129px !important;
+
+}
+
+
+
+.loader2 {
+
+  color: #000;
+
+  border: 1px solid rgba(255, 255, 240) !important; 
+
+}
+.fuller {
+
+  margin-left: -8%;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+}
+
+
+
+.fuller2 {
+
+  visibility: hidden;
+
+  opacity: 0;
+
+}
+#menu-button-container {
+
+  display: inline-block;
+
+  float: right;
+
+  padding: 100px;
+
+  margin-top: -60px;
+
+}
+#menu-button {
+
+  height: 30px;
+
+  width: 35px;
+
+  position: relative;
+
+  cursor: pointer;
+
+  z-index: 2000;
+
+  overflow: hidden;
+
+}
+#menu-button div {
+
+  height: 3px;
+
+  width: 100%;
+
+  background: white;
+
+  position: absolute;
+
+  top: 14px;
+
+  transition: .4s ease-in-out;
+
+}
+ #menu-button div:nth-child(1) {
+
+  top: 7px;
+
+} 
+
+#menu-button div:nth-child(2), #menu-button div:nth-child(3) {
+
+  top: 14px;
+
+}
+
+#menu-button div:nth-child(4) {
+
+  top: 21px;
+
+}
+
+#menu-button.animate div:nth-child(1), #menu-button.animate div:nth-child(4) {
+
+    top: 14px;
+
+    opacity: 0;
+
+  }
+
+#menu-button.animate div:nth-child(2) {
+
+    transform: rotate(45deg);
+
+  }
+
+#menu-button.animate div:nth-child(3) {
+
+  transform: rotate(-45deg);
+
+}
+#menu-button.change-color div {
+
+  background: black;
+
+}
+#menu-button.hover-animation div:nth-child(1), #menu-button.hover-animation div:nth-child(4) {
+
+  width: 80%;
+
+}
+#menu-button.hover-color div {
+
+  background: white;
+
+}
+
+
+
+#menu-button.hover-color2 div {
+
+  background: white!important;
+
+}
+#menu-overlay {
+
+  position: absolute;
+
+  height: 0;
+
+  width: 95%;
+
+  background: url("https://raw.githubusercontent.com/6yn569k7ym-maker/pr/main/rain-menu.png");
+
+  left: 0;
+
+  top: 0;
+
+  transition: .5s ease-in;
+
+  z-index: 2000;
+
+}
+.reveal {
+
+  height: 722px !important;
+
+}
+#nav-container {
+
+  position: absolute;
+
+  top: 10%;
+  left: 60%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 2000;
+
+  transition: 1s ease-out;
+
+}
+
+
+
+#nav-container ul li {
+
+  list-style: none;
+
+  transition: .6s ease-in-out;
+
+}
+#nav-container ul li a {
+
+  text-decoration: none;
+
+  font-family: 'Montserrat', serif;
+
+  font-size: 50px;
+
+  line-height: 28px;
+
+  color: rad;
+
+  transition: .3s ease-in-out;
+
+}
+.hidden {
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  margin-left: -60%;
+
+}
+.nav-animate {
+
+  color: white !important;
+
+}
+.first-character {
+  
+color: orange;
+
+float: left;
+
+ font-size: 84px;
+
+ line-height: 64px;
+
+ padding-top: 4px;
+
+ padding-right: 8px;
+
+ padding-left: 3px;
+
+ font-family: 'Montserrat', sans-serif; 
+ 
+ </style>
+</head> 
+<body>
+<div class="box">
+
+<div id="header-container">
+
+  <div id="header-bg"></div>
+
+  <div id="header-overlay">
+
+    <div id="intro">
+  <h3 class="fuller">Город после дождя</h3>
+
+      <div id="button-container">
+
+        <div id="button-overlay"></div>
+    <a class="fuller2" href="#1">открыть</a>
+      </div>
+
+       </div>
+     <div id="menu-overlay"></div>
+
+<div id="menu-button-container">
+
+  <div id="menu-button">
+
+    <div></div>
+
+    <div></div>
+
+    <div></div>
+
+    <div></div>
+
+  </div></div>
+
+</div>
+<div id="nav-container" class="hidden">
+
+    <ul>
+
+      <li id="nav1" class="hidden"><a href="#image">Улицы</a></li>
+
+      <li id="nav2" class="hidden"><a href="#text">Отражения</a></li>
+
+      <li id="nav3" class="hidden"><a href="#1">Мгновения</a></li>
+
+    </ul>
+
+  </div>
+  <main>
+
+  <div id="image">
+
+    <img src="https://raw.githubusercontent.com/6yn569k7ym-maker/pr/main/rain-city.png">
+
+  </div>
+  <div id="text">
+  <p><span class="first-character one">Г</span>ород после дождя выглядит так, будто знакомые улицы получили новую жизнь. Асфальт отражает окна и фонари, воздух становится прозрачнее, а обычный перекрёсток напоминает кадр из фильма. Уличная фотография помогает заметить эту перемену. Вместо поиска необычного места достаточно остановиться там, где каждый день проходишь мимо, и посмотреть, как свет меняет привычное пространство.
+
+  <br>
+
+  <br>
+  <p><span class="first-character two">О</span>тражения создают внутри города ещё один мир. В луже появляется перевёрнутый фасад, в стекле витрины встречаются улица и интерьер, а мокрый тротуар соединяет холодное небо с тёплым светом окон. Если немного изменить точку съёмки, предметы начинают складываться в новую композицию. Иногда самый интересный кадр находится буквально под ногами.
+
+  <br>
+
+  <br>
+  <p><span class="first-character three">С</span>вет задаёт настроение фотографии. В сумерках синие оттенки улицы соседствуют с оранжевыми фонарями, а силуэт прохожего становится частью этой цветовой истории. Камера может показать движение через лёгкое размытие или остановить капли в воздухе. Важно не количество эффектов, а ощущение, которое остаётся у зрителя: спокойствие, ожидание или желание узнать, куда направляется человек в кадре.
+
+  <br>
+
+  <br>
+  <section class="section" id="1"><p><span class="first-character four">М</span>гновение редко предупреждает о своём появлении. Кто-то раскрывает зонт, автобус оставляет полосу света, прохожий задерживается у окна. Фотограф наблюдает и ждёт, пока линии, свет и движение встретятся в одной точке. Такой кадр невозможно полностью повторить. Именно поэтому простая прогулка с камерой превращается в поиск маленьких историй, которые город рассказывает каждый вечер.
+</section>
+
+<p>«Город после дождя» приглашает смотреть внимательнее. Для начала не нужны дальняя поездка или сложное оборудование. Выбери знакомую улицу, дождись интересного света и попробуй увидеть в ней то, чего раньше не замечал. Хорошая фотография начинается с любопытства и желания сохранить короткий момент.</p>
+
+  </div>
+  <div id="overlay"></div>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    $("#intro h3").delay(1000).queue(function(n) {
+        $(this).toggleClass("fuller");
+        n();
+    });
+
+    $("#intro a").delay(1400).queue(function(n) {
+        $(this).toggleClass("fuller2");
+        n();
+    });
+
+    $("#intro a").hover(function() {
+        $("#button-overlay").toggleClass("loader");
+        $("#button-container a").toggleClass("loader2");
+    });
+	$("#menu-button").hover(function() {
+        $("#menu-button").toggleClass("hover-animation");
+        $("#menu-button").toggleClass("hover-color");
+    });
+
+    $('#nav-container ul li a').hover(function() {
+        $('#nav-container ul li a').toggleClass('nav-animate');
+        $(this).toggleClass('nav-animate');
+    });
+
+    $("#menu-button").click(function() {
+        $("#intro h3").toggleClass("fuller");
+        $("#intro a").toggleClass('fuller2');
+        $("#menu-button").toggleClass("animate");
+        $("#menu-overlay").toggleClass("reveal");
+        $("#menu-button").toggleClass("change-color");
+
+        $("#nav-container").delay(200).queue(function(n) {
+            $(this).toggleClass("hidden");
+            n();
+        });
+
+        $("#nav1").delay(400).queue(function(n) {
+            $(this).toggleClass("hidden");
+            n();
+        });
+
+        $("#nav2").delay(600).queue(function(n) {
+            $(this).toggleClass("hidden");
+            n();
+        });
+
+        $("#nav3").delay(800).queue(function(n) {
+            $(this).toggleClass("hidden");
+            n();
+        });
+    });
+});
+</script>
+</body>
+</html>
