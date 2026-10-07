@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Как рождается кино. Замысел. Съёмка. Монтаж</title>
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Oswald:300,400,700);
+    @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800);
+
+    html, body {
+      font-family: 'Open Sans', sans-serif;
+      height: 100%;
+      margin: 0;
+      background-color: #e6e6ca;
+    }
+
+    .box {
+      width: 80%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    #main {
+      width: 100%;
+      padding: 0;
+    }
+
+    .margin-top-10 {
+      padding-top: 10px;
+    }
+
+    .margin-bot-10 {
+      padding-bottom: 10px;
+    }
+
+    #flat h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 24px;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: black;
+      padding: 0;
+      margin: 0;
+    }
+
+    #flat h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(30px, 5vw, 70px);
+      position: relative;
+      margin: 0;
+      padding: 0 20px;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, .85);
+      letter-spacing: 10px;
+      text-align: center;
+      color: white;
+      font-weight: 400;
+      text-transform: uppercase;
+      z-index: 10;
+      opacity: .9;
+    }
+
+    #flat h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      font-weight: 400;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      color: black;
+    }
+
+    #flat p {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+    .first-character {
+      font-weight: 400;
+      float: left;
+      font-size: 84px;
+      line-height: 64px;
+      padding-top: 4px;
+      padding-right: 8px;
+      padding-left: 3px;
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    .galaxy {
+      color: #3c3cab;
+      font-family: "Gothic №60", serif;
+    }
+
+    .jedi {
+      color: #b387d4;
+      font-family: "Gothic №60", serif;
+    }
+
+    .dark-side {
+      color: #b3262d;
+      font-family: "Gothic №60", serif;
+    }
+
+
+    #flat .title {
+      background: white;
+      padding: 60px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    #flat .title h1 {
+      font-size: 35px;
+      letter-spacing: 8px;
+    }
+
+    #flat .block {
+      background: white;
+      padding: 6px;
+      width: min(820px, 100%);
+      box-sizing: border-box;
+      padding: 24px;
+      margin: 0 auto;
+      text-align: justify;
+    }
+
+    #flat .block-gray {
+      background: #f2f2f2;
+      padding: 6px;
+    }
+
+    #flat .parallax-one {
+      padding-top: 200px;
+      padding-bottom: 200px;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      background-image: url("https://raw.githubusercontent.com/6yn569k7ym-maker/pr/main/cinema-idea.png");
+      background-attachment: fixed;
+      background-size: cover;
+      -moz-background-size: cover;
+      -webkit-background-size: cover;
+      background-repeat: no-repeat;
+      background-position: top center;
+    }
+
+    #flat .parallax-two {
+      padding-top: 200px;
+      padding-bottom: 200px;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      background-image: url("https://raw.githubusercontent.com/6yn569k7ym-maker/pr/main/cinema-shoot.png");
+      background-attachment: fixed;
+      background-size: cover;
+      -moz-background-size: cover;
+      -webkit-background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    #flat .parallax-three {
+      padding-top: 200px;
+      padding-bottom: 200px;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      background-image: url("https://raw.githubusercontent.com/6yn569k7ym-maker/pr/main/cinema-edit.png");
+      background-attachment: fixed;
+      background-size: cover;
+      -moz-background-size: cover;
+      -webkit-background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    #flat .line-break {
+      background: linear-gradient(60deg, #3c3cab, #ffd700, #dc143c);
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    #flat .line-break2 {
+      background: linear-gradient(60deg, #b387d4, #FFE4E1, #DCDCDC);
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    #flat .line-break3 {
+      background: linear-gradient(60deg, #f9dcff, #B0C4DE, #D8BFD8);
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    @media screen and (max-width: 959px) and (min-width: 768px) {
+      #flat .block {
+        padding: 40px;
+        width: 100%;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      #flat .block {
+        padding: 30px;
+        width: 100%;
+      }
+      #flat h2 {
+        font-size: 30px;
+      }
+      #flat .block {
+        padding: 30px;
+      }
+      #flat .parallax-one, #flat .parallax-two, #flat .parallax-three {
+        padding-top: 100px;
+        padding-bottom: 100px;
+      }
+    }
+
+    @media screen and (max-width: 479px) {
+      #flat .block {
+        padding: 30px 15px;
+        width: 100%;
+      }
+    }
+
+    #flat .parallax-one::before,
+    #flat .parallax-two::before,
+    #flat .parallax-three::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, .3);
+    }
+
+    @media screen and (max-width: 767px) {
+      .box { width: 100%; }
+      #flat .title { padding: 40px 20px; }
+      #flat .title h1 { font-size: 28px; letter-spacing: 4px; }
+      #flat h2 { letter-spacing: 3px; }
+      #flat h3 { letter-spacing: 4px; }
+      #flat .parallax-one,
+      #flat .parallax-two,
+      #flat .parallax-three { background-attachment: scroll; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #flat .parallax-one,
+      #flat .parallax-two,
+      #flat .parallax-three { background-attachment: scroll; }
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <main id="flat">
+      <section>
+        <div class="title">
+          <h3>От первой идеи</h3>
+          <h1>Как рождается кино</h1>
+          <h3>До финального кадра</h3>
+        </div>
+      </section>
+      <section aria-labelledby="galaxy-title">
+        <div class="parallax-one">
+          <h2 id="galaxy-title">Рождение истории</h2>
+        </div>
+        <div class="block">
+          <p><span class="first-character galaxy">К</span>ино начинается с наблюдения. Случайная встреча, знакомый двор или короткая фраза могут стать основой будущей истории. Автор замечает деталь и задаёт себе вопрос, почему она его зацепила. Постепенно появляются герой, его желание и препятствие, которое мешает двигаться дальше. Пока камера ещё лежит в чехле, фильм уже обретает форму в заметках, разговорах и первых набросках сцен. Здесь важнее всего найти то, о чём действительно хочется рассказать.</p>
+          <p class="line-break margin-top-10" aria-hidden="true"></p>
+          <p class="margin-top-10">Сценарий помогает превратить впечатление в последовательность событий. В нём важно показать поступки героя, а не только объяснить его чувства словами. Режиссёр продумывает, что зритель узнает в начале, какую тайну сохранит история и чем завершится путь персонажа. Раскадровка позволяет представить будущие планы, движение камеры и переходы между сценами. Даже простые рисунки помогают команде понять общий замысел и подготовиться к съёмке.</p>
+        </div>
+      </section>
+      <section aria-labelledby="jedi-title">
+        <div class="parallax-two">
+          <h2 id="jedi-title">На съёмочной площадке</h2>
+        </div>
+        <div class="block">
+          <p><span class="first-character jedi">С</span>ъёмочная площадка объединяет людей с разными задачами. Режиссёр работает с актёрами, оператор выбирает ракурс и свет, звукорежиссёр следит за чистотой записи. Каждый кадр складывается из множества решений, которые зритель может даже не заметить. Мягкий свет делает сцену спокойнее, крупный план приближает нас к переживаниям героя, а движение камеры меняет ощущение пространства. Техника помогает рассказать историю, когда у команды есть ясное понимание её смысла.</p>
+          <p class="line-break2 margin-top-10" aria-hidden="true"></p>
+          <p class="margin-top-10">Хорошая сцена рождается не всегда с первого дубля. Иногда актёру нужно время, чтобы найти точную интонацию, а оператору приходится менять положение камеры. В такие моменты особенно важны внимание друг к другу и готовность обсуждать решения. Режиссёр держит в голове весь фильм, но оставляет место неожиданным находкам. Живой взгляд, небольшая пауза или случайный жест могут сделать эпизод выразительнее, чем заранее придуманный эффект.</p>
+        </div>
+      </section>
+      <section aria-labelledby="dark-title">
+        <div class="parallax-three">
+          <h2 id="dark-title">Магия монтажа</h2>
+        </div>
+        <div class="block">
+          <p><span class="first-character dark-side">М</span>онтаж превращает отдельные кадры в цельное высказывание. Один и тот же взгляд героя может восприниматься по-разному в зависимости от того, какой план следует за ним. Длина кадра задаёт ритм, пауза усиливает ожидание, а резкая склейка способна изменить настроение сцены. Монтажёр ищет связи между изображениями и убирает всё, что мешает истории двигаться вперёд. На этом этапе фильм иногда находит более точную форму, чем та, которую представляли во время съёмки.</p>
+          <p class="line-break3 margin-top-10" aria-hidden="true"></p>
+          <p class="margin-top-10">После сборки изображения начинается работа со звуком и цветом. Шаги, дыхание и шум улицы создают ощущение присутствия, музыка поддерживает настроение, а тишина помогает услышать главное. Цветокоррекция связывает кадры между собой и уточняет атмосферу истории. Финальный просмотр показывает, понятен ли путь героя и чувствуется ли задуманный ритм. Когда все элементы начинают работать вместе, фильм становится приглашением увидеть привычный мир с другой точки зрения.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
